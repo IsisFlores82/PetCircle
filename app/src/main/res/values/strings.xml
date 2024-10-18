@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PetCircle</string>
+    <string name="Log_in">Log In</string>
+    <string name="Register">Register</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="Name">Name </string>
+    <string name="Phone">Phone</string>
+    <string name="Public">Public</string>
+</resources>

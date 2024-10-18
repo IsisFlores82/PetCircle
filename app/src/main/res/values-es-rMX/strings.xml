@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PetCircle</string>
+    <string name="Log_in">Inicia Sesion</string>
+    <string name="Register">Registrate</string>
+    <string name="Email">Correo Electronico</string>
+    <string name="Password">Constraseña</string>
+    <string name="Name">Nombre</string>
+    <string name="Phone">Telefono</string>
+    <string name="Public">Public</string>
+</resources>
