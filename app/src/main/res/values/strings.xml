@@ -7,4 +7,14 @@
     <string name="Name">Name </string>
     <string name="Phone">Phone</string>
     <string name="Public">Public</string>
+    <string name="Anecdote">Anecdote</string>
+    <string name="Health">Health</string>
+    <string name="Alimentation">Alimentation</string>
+    <string name="Questions">Questions</string>
+    <string name="Adoption">Adoption</string>
+    <string name="Forfun">For fun</string>
+    <string name="Profile">Profile</string>
+    <string name="LogOut">Log Out</string>
+    <string name="navDraweOpen">Open navigation drawer</string>
+    <string name="navDraweClose">Close navigation drawer</string>
 </resources>

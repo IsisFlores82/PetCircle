@@ -8,4 +8,14 @@
     <string name="Name">Nombre</string>
     <string name="Phone">Telefono</string>
     <string name="Public">Public</string>
+    <string name="Anecdote">Anecdota</string>
+    <string name="Health">Salud</string>
+    <string name="Alimentation">Alimentacion</string>
+    <string name="Questions">Preguntas</string>
+    <string name="Adoption">Adopcion</string>
+    <string name="Forfun">Entretenimiento</string>
+    <string name="Profile">Perfil</string>
+    <string name="LogOut">Cerrar Sesion</string>
+    <string name="navDraweOpen">abrir nav drawer</string>
+    <string name="navDraweClose">cerrar nav drawer</string>
 </resources>

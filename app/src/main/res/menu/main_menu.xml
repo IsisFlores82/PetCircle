@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Anecdote"
+            android:icon="@drawable/anecdote"
+            android:title="@string/Anecdote" />
+
+        <item
+            android:id="@+id/forFun"
+            android:icon="@drawable/bunny"
+            android:title="@string/Forfun" />
+
+        <item
+            android:id="@+id/questions"
+            android:icon="@drawable/adoption"
+            android:title="@string/Questions" />
+
+        <item
+            android:id="@+id/Medic"
+            android:icon="@drawable/health"
+            android:title="@string/Health" />
+
+        <item
+            android:id="@+id/Aliment"
+            android:icon="@drawable/alimentation"
+            android:title="@string/Alimentation" />
+
+        <item
+            android:id="@+id/Adption"
+            android:icon="@drawable/adoption"
+            android:title="@string/Adoption" />
+
+
+    </group>
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="@string/Profile">
+
+            <menu>
+                <item
+                    android:id="@+id/profile"
+                    android:icon="@drawable/profile"
+                    android:title="@string/Profile" />
+
+                <item
+                    android:id="@+id/LogOut"
+                    android:icon="@drawable/logout"
+                    android:title="@string/LogOut" />
+
+            </menu>
+
+        </item>
+
+    </group>
+
+</menu>
