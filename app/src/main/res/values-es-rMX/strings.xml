@@ -18,4 +18,5 @@
     <string name="LogOut">Cerrar Sesion</string>
     <string name="navDraweOpen">abrir nav drawer</string>
     <string name="navDraweClose">cerrar nav drawer</string>
+    <string name="Save">Guardar</string>
 </resources>

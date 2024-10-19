@@ -15,6 +15,7 @@
     <string name="Forfun">For fun</string>
     <string name="Profile">Profile</string>
     <string name="LogOut">Log Out</string>
+    <string name="Save">Save</string>
     <string name="navDraweOpen">Open navigation drawer</string>
     <string name="navDraweClose">Close navigation drawer</string>
 </resources>

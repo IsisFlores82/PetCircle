@@ -34,8 +34,8 @@ class Feed : AppCompatActivity() {
         binding.recycler.adapter = PostAdapter(
             listOf(
                 Post("She happy?", "habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
-                Post("She happy?", "habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
-                Post("She happy?", "habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
+                Post("otro post", "wuaw wuaw!", "https://picsum.photos/200/300"),
+                Post("mm tengo sed", "glup glup", "https://picsum.photos/200/300"),
                 Post("She happy?", "habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
             )
         )
