@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PetCircleProyectoPSM"
         tools:targetApi="31">
         <activity
+            android:name=".CreatePost"
+            android:exported="false" />
+        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity
@@ -35,7 +38,7 @@
             android:theme="@style/Theme.PetCircleProyectoPSM.Fullscreen" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

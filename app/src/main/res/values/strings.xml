@@ -18,4 +18,8 @@
     <string name="Save">Save</string>
     <string name="navDraweOpen">Open navigation drawer</string>
     <string name="navDraweClose">Close navigation drawer</string>
+    <string name="title">Title Post</string>
+    <string name="body">Body Post</string>
+    <string name="post">Post</string>
+
 </resources>

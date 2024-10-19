@@ -19,4 +19,7 @@
     <string name="navDraweOpen">abrir nav drawer</string>
     <string name="navDraweClose">cerrar nav drawer</string>
     <string name="Save">Guardar</string>
+    <string name="title">Titulo</string>
+    <string name="body">Cuerpo</string>
+    <string name="post">Publicar</string>
 </resources>

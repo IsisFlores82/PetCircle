@@ -1,5 +1,6 @@
 package com.example.petcircle_proyectopsm
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -55,6 +56,8 @@ class Feed : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        navigationView.bringToFront();
+
         toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar,
             R.string.navDraweOpen, R.string.navDraweClose
@@ -96,12 +99,49 @@ class Feed : AppCompatActivity() {
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
+
+                R.id.Anecdote -> {
+                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                R.id.Medic -> {
+                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                R.id.Aliment -> {
+                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                R.id.Adption -> {
+                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                R.id.profile -> {
+                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, Profile::class.java)
+                    startActivity(intent) // Iniciar la nueva actividad
+                    true
+                }
                 // Agrega más casos según tus elementos de menú
                 else -> false
             }.also {
                 // Siempre cierra el menú al seleccionar un elemento
                 drawerLayout.closeDrawer(GravityCompat.START)
             }
+        }
+
+        binding.createPost.setOnClickListener {
+            val intent = Intent(this, CreatePost::class.java)
+            startActivity(intent) // Iniciar la nueva actividad
         }
 
     }
