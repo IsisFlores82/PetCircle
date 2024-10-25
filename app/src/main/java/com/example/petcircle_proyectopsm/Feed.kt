@@ -34,10 +34,10 @@ class Feed : AppCompatActivity() {
 
         binding.recycler.adapter = PostAdapter(
             listOf(
-                Post("She happy?", "habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
-                Post("otro post", "wuaw wuaw!", "https://picsum.photos/200/300"),
-                Post("mm tengo sed", "glup glup", "https://picsum.photos/200/300"),
-                Post("She happy?", "habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
+                Post("She happy?", "Anecdote", "15/04/2024", "9:56pm","habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
+                Post("otro post", "Alimentation", "16/09/2024", "12:21pm", "wuaw wuaw!", "https://picsum.photos/200/300"),
+                Post("mm tengo sed", "Health", "19/09/2024", "6:56pm","glup glup", "https://picsum.photos/200/300"),
+                Post("She happy?", "For fun", "31/05/2024", "11:56am","habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
             )
         )
 

@@ -11,15 +11,6 @@
     tools:openDrawer=""
     >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/view_post_item" />
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
@@ -81,6 +72,16 @@
                     app:layout_constraintTop_toTopOf="@+id/myToolbar"
                     app:srcCompat="@mipmap/canelaa_round" />
 
+                <ImageView
+                    android:layout_width="44dp"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/myToolbar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:tint="@color/light_brown"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -95,6 +96,15 @@
             android:src="@drawable/add"
             app:tint="#49454f"
             app:backgroundTint="@color/beige" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/view_post_item" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

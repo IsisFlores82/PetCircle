@@ -25,6 +25,8 @@ class PostAdapter(private val posts : List<Post>) : RecyclerView.Adapter<PostAda
         fun bind(post: Post){
             binding.PostTitle.text = post.title
             binding.PostBody.text = post.body
+            binding.category.text = post.category
+            binding.data.text = post.date + "  " + post.hour
             //binding.PostImg.setImageResource(post.imageUrl) = post.imageUrl
         }
     }
