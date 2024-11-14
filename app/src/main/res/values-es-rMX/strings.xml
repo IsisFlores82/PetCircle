@@ -22,4 +22,5 @@
     <string name="title">Titulo</string>
     <string name="body">Cuerpo</string>
     <string name="post">Publicar</string>
+    <string name="required">Requerido</string>
 </resources>

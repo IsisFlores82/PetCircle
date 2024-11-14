@@ -21,5 +21,6 @@
     <string name="title">Title Post</string>
     <string name="body">Body Post</string>
     <string name="post">Post</string>
+    <string name="required">Required</string>
 
 </resources>
