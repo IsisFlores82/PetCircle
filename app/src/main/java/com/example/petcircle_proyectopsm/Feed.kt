@@ -34,10 +34,38 @@ class Feed : AppCompatActivity() {
 
         binding.recycler.adapter = PostAdapter(
             listOf(
-                Post("She happy?", "Anecdote", "15/04/2024", "9:56pm","habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
-                Post("otro post", "Alimentation", "16/09/2024", "12:21pm", "wuaw wuaw!", "https://picsum.photos/200/300"),
-                Post("mm tengo sed", "Health", "19/09/2024", "6:56pm","glup glup", "https://picsum.photos/200/300"),
-                Post("She happy?", "For fun", "31/05/2024", "11:56am","habia una fiesta y ella tambien estaba feliz!", "https://picsum.photos/200/300"),
+                Post(
+                    "She happy?",
+                    "Anecdote",
+                    "15/04/2024",
+                    "9:56pm",
+                    "habia una fiesta y ella tambien estaba feliz!",
+                    "https://picsum.photos/200/300"
+                ),
+                Post(
+                    "otro post",
+                    "Alimentation",
+                    "16/09/2024",
+                    "12:21pm",
+                    "wuaw wuaw!",
+                    "https://picsum.photos/200/300"
+                ),
+                Post(
+                    "mm tengo sed",
+                    "Health",
+                    "19/09/2024",
+                    "6:56pm",
+                    "glup glup",
+                    "https://picsum.photos/200/300"
+                ),
+                Post(
+                    "She happy?",
+                    "For fun",
+                    "31/05/2024",
+                    "11:56am",
+                    "habia una fiesta y ella tambien estaba feliz!",
+                    "https://picsum.photos/200/300"
+                ),
             )
         )
 
@@ -73,8 +101,8 @@ class Feed : AppCompatActivity() {
         toggle.syncState()
 
         // Maneja el botón de navegación de la barra de acción
-       //supportActionBar?.setDisplayHomeAsUpEnabled(true)
-       //supportActionBar?.setHomeButtonEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setHomeButtonEnabled(true)
 
         // Manejar el evento de clic en el ícono
         //toggle.setToolbarNavigationClickListener {
@@ -89,48 +117,66 @@ class Feed : AppCompatActivity() {
             // Maneja el clic en los elementos del menú
             when (menuItem.itemId) {
                 R.id.forFun -> {
-                    Log.d("MenuClick", "Item clicked: For Fun") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: For Fun")
                     Toast.makeText(this, "for fun clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.questions -> {
-                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: Questions")
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.Anecdote -> {
-                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: Questions")
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.Medic -> {
-                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: Questions")
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.Aliment -> {
-                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: Questions")
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.Adption -> {
-                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: Questions")
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
 
                 R.id.profile -> {
-                    Log.d("MenuClick", "Item clicked: Questions") // Agrega el log aquí
+                    Log.d("MenuClick", "Item clicked: Questions") //
                     Toast.makeText(this, "questions clickeado", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Profile::class.java)
                     startActivity(intent) // Iniciar la nueva actividad
                     true
                 }
+
+                R.id.LogOut -> {
+                    Log.d("MenuClick", "Item clicked: Cerrar Sesión")
+                    Toast.makeText(this, "Cerrando sesión...", Toast.LENGTH_SHORT).show()
+
+                    val prefs = Prefs(this)
+                    prefs.clearUserCredentials()
+
+                    // Redirigir a MainActivity y limpiar la pila de actividades
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish() // Finaliza la actividad actual para prevenir el acceso con "Atrás"
+
+                    true
+                }
+
+
                 // Agrega más casos según tus elementos de menú
                 else -> false
             }.also {

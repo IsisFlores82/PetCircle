@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context=".Feed"
     android:background="@color/light_backgound"
-    tools:openDrawer=""
+    tools:openDrawer="start"
     >
 
     <com.google.android.material.navigation.NavigationView

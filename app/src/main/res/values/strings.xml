@@ -5,6 +5,7 @@
     <string name="Email">Email</string>
     <string name="Password">Password</string>
     <string name="Name">Name </string>
+    <string name="NickName">NickName </string>
     <string name="Phone">Phone</string>
     <string name="Public">Public</string>
     <string name="Anecdote">Anecdote</string>

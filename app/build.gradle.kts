@@ -44,6 +44,7 @@ dependencies {
     //implementation("com.airbnb.android:lottie-compose:4.2.2")
     implementation("com.airbnb.android:lottie-compose:6.0.0")
     implementation("androidx.activity:activity-compose:1.7.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
 
 
     implementation(libs.androidx.core.ktx)
@@ -54,4 +55,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }

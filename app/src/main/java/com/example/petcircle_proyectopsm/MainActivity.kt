@@ -16,8 +16,22 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding.btnLogIn.setOnClickListener {
-            val intent = Intent(this, LogInActivity::class.java)
-            startActivity(intent) // Iniciar la nueva actividad
+
+            // checa si hay credenciales guardadas
+            val prefs = Prefs(this) //instancia la clase con el conetexto de la ventana
+            val (savedEmail, savedPassword) = prefs.getUserCredentials()
+
+            if (savedEmail != null && savedPassword != null) {
+                // Si hay credenciales, intenta va directo al feed
+                val intent = Intent(this@MainActivity, Feed::class.java)
+                startActivity(intent)
+            }
+            else {
+                // Si no hay credenciales, lleva a la ventana de inicio de sesión
+                val intent = Intent(this, LogInActivity::class.java)
+                startActivity(intent)
+            }
+
         }
 
         binding.btnRegister.setOnClickListener {
