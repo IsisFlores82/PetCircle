@@ -69,7 +69,6 @@ class Register : AppCompatActivity() {
             }
         }
 
-
     }
 
     private suspend fun getUsers(): List<User>? {

@@ -57,7 +57,7 @@ class LogInActivity : AppCompatActivity() {
                         if (user.Password == password) {
                             // guarda las credenciales en SharedPreferences
                             val prefs = Prefs(this@LogInActivity)
-                            prefs.saveUserCredentials(email, password)
+                            prefs.saveUserCredentials(email, password, user.UserId)
 
                             // te manda a la ventana del feed
                             val intent = Intent(this@LogInActivity, Feed::class.java)

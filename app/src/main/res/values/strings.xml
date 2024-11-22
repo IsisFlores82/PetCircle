@@ -23,5 +23,6 @@
     <string name="body">Body Post</string>
     <string name="post">Post</string>
     <string name="required">Required</string>
+    <string name="editPro">Edit Profile</string>
 
 </resources>
