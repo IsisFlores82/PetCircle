@@ -1,21 +1,19 @@
 package com.example.petcircle_proyectopsm
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.petcircle_proyectopsm.databinding.ActivityLogInBinding
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
+import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import com.example.petcircle_proyectopsm.databinding.ActivityLogInBinding
 import com.example.petcircle_proyectopsm.db.DbHelper
 import com.example.petcircle_proyectopsm.model.User
 import com.example.petcircle_proyectopsm.model.UserDbClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class LogInActivity : AppCompatActivity() {
 
@@ -63,12 +61,10 @@ class LogInActivity : AppCompatActivity() {
                         if (user.Password == password) {
                             // guarda las credenciales en SharedPreferences
                             val prefs = Prefs(this@LogInActivity)
-<<<<<<< HEAD
-                            prefs.saveUserCredentials(email, password)
-                            prefs.saveUserId(user.UserId)
-=======
+
+                           // prefs.saveUserCredentials(email, password)
                             prefs.saveUserCredentials(email, password, user.UserId)
->>>>>>> e386c27f883cde6aaa97e9dbfc0be6a049c7563c
+                            prefs.saveUserCredentials(email, password, user.UserId)
 
                             dbHelper = DbHelper(applicationContext)
 

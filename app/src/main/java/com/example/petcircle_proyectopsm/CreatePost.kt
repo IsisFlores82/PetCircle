@@ -25,6 +25,7 @@ import java.lang.Void
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import com.example.petcircle_proyectopsm.Prefs
 
 
 class CreatePost : AppCompatActivity() {
@@ -151,3 +152,5 @@ class CreatePost : AppCompatActivity() {
 
 
 }
+
+

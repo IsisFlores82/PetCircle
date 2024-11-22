@@ -30,6 +30,8 @@ import retrofit2.Response
 import java.io.ByteArrayOutputStream
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import com.example.petcircle_proyectopsm.Prefs
+
 
 class Profile : AppCompatActivity() {
 
@@ -46,12 +48,16 @@ class Profile : AppCompatActivity() {
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val prefs = Prefs(this)
-        val (savedEmail, savedId) = prefs.getUserData()
-        if (savedId != null) {
+        val savedId = prefs.getUserId()
+
+// Verifica que el ID no sea inválido (-1)
+        if (savedId != -1) {
             GetData(savedId)
+        } else {
+            Toast.makeText(this, "No se encontró un usuario válido", Toast.LENGTH_SHORT).show()
         }
+
 
 
 

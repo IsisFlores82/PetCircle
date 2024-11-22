@@ -111,17 +111,17 @@ class Feed : AppCompatActivity() {
                     val prefs = Prefs(this)
                     prefs.clearUserCredentials()
 
-<<<<<<< HEAD
+
           LogInActivity.dbHelper.onLogOut()
 
                     // Redirigir a MainActivity y limpiar la pila de actividades
-=======
+
 
                     LogInActivity.dbHelper.onLogOut()
 
                     // Redirigir a MainActivity y limpiar la pila de actividades
 
->>>>>>> e386c27f883cde6aaa97e9dbfc0be6a049c7563c
+
                     val intent = Intent(this, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
