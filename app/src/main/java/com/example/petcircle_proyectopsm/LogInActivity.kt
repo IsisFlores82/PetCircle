@@ -64,6 +64,7 @@ class LogInActivity : AppCompatActivity() {
                             // guarda las credenciales en SharedPreferences
                             val prefs = Prefs(this@LogInActivity)
                             prefs.saveUserCredentials(email, password)
+                            prefs.saveUserId(user.UserId)
 
                             dbHelper = DbHelper(applicationContext)
 

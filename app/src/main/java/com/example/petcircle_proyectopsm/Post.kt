@@ -8,5 +8,5 @@ data class Post(
     val CreationDate: String,
     val UpdatedDate: String,
     val Status: Int,
-    val Img: String? = null // Si hay imágenes
+    val Img: String? = null // Opcional
 )

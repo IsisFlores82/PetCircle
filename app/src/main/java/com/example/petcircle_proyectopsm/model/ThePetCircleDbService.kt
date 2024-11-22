@@ -41,4 +41,12 @@ interface ThePetCircleDbService {
     // Esta va extra porque no estamos haciendo eliminación directa, sino lógica, así que siempre sería con POST
     @POST("?e=Users") // Cambié DELETE por POST ya que estás usando eliminación lógica
     fun deleteUser(@Query("c") controller: String, @Query("id") userId: Int): Call<Void>
+
+
+    // Guardar un post
+    @POST("?e=Save")
+    fun savePost(
+        @Query("c") controller: String,
+        @Body post: Post // El objeto Post enviado como JSON
+    ): Call<Void>
 }

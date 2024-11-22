@@ -50,7 +50,7 @@ class Register : AppCompatActivity() {
         nicknameFocusListener()
 
 
-        binding.submitButton.setOnClickListener { submitForm() }
+        binding.submitButton.setOnClickListener { submitForm() }//manda form para registro
 
         imageViewProfile = binding.imageViewProfile
         val buttonSelectImage = binding.buttonSelectImage
