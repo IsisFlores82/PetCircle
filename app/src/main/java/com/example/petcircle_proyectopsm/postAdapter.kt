@@ -23,11 +23,11 @@ class PostAdapter(private val posts : List<Post>) : RecyclerView.Adapter<PostAda
 
     class ViewHolder(private val binding: ViewPostItemBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(post: Post){
-            binding.PostTitle.text = post.title
-            binding.PostBody.text = post.body
-            binding.category.text = post.category
-            binding.data.text = post.date + "  " + post.hour
-            //binding.PostImg.setImageResource(post.imageUrl) = post.imageUrl
+            binding.PostTitle.text = post.Title
+            binding.PostBody.text = post.Description
+            binding.category.text = post.CategoryId.toString() // Ajusta según lo esperado
+            binding.data.text = post.CreationDate // Ajusta según lo esperado
+
         }
     }
 }

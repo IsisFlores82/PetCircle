@@ -1,5 +1,6 @@
 package com.example.petcircle_proyectopsm.model
 
+import com.example.petcircle_proyectopsm.Post
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -10,6 +11,13 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface ThePetCircleDbService {
+
+
+    @GET("?e=Posts") // Cambia "Posts" por el controlador en tu backend, si es diferente
+    fun getPosts(
+        @Query("c") controller: String, // "Post" o lo que definas en tu backend
+        @Query("id") id: Int = 0 // Pasa 0 para obtener todos los posts
+    ): Call<List<Post>>
 
     @GET("?e=Users") // Este es el endpoint
     fun listUsers(@Query("c") controller: String): Call<List<User>>
