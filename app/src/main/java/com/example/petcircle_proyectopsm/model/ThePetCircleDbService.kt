@@ -24,7 +24,7 @@ interface ThePetCircleDbService {
 
     // Obtener un usuario por su ID
     @GET("?e=Users")
-    fun getUserById(@Query("c") controller: String, @Query("id") userId: Int): Call<List<User>>
+    fun getUserById(@Query("c") controller: String, @Query("i") userId: Int): Call<List<User>>
 
 
     @GET("?e=UserByEmail") //endpoint
@@ -35,6 +35,13 @@ interface ThePetCircleDbService {
     fun saveUser(
         @Query("c") controller: String,
         @Body user: User // Enviar el objeto User como JSON
+    ): Call<Void>
+
+    @POST("?e=Save")
+    fun saveEditedUser(
+        @Query("c") controller: String,
+        @Body user: User, // Enviar el objeto User como JSON
+        @Query("i") userId: Int
     ): Call<Void>
 
     // Eliminar un usuario.
