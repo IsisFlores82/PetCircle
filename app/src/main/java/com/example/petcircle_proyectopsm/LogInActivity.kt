@@ -7,8 +7,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.petcircle_proyectopsm.databinding.ActivityLogInBinding
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import android.widget.Toast
+import com.example.petcircle_proyectopsm.db.DbHelper
 import com.example.petcircle_proyectopsm.model.User
 import com.example.petcircle_proyectopsm.model.UserDbClient
 import retrofit2.Call
@@ -19,6 +21,10 @@ class LogInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLogInBinding
     private var user: User? = null
+
+    companion object{
+        lateinit var dbHelper: DbHelper
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +64,10 @@ class LogInActivity : AppCompatActivity() {
                             // guarda las credenciales en SharedPreferences
                             val prefs = Prefs(this@LogInActivity)
                             prefs.saveUserCredentials(email, password, user.UserId)
+
+                            dbHelper = DbHelper(applicationContext)
+
+                            dbHelper.insertUser(user)
 
                             // te manda a la ventana del feed
                             val intent = Intent(this@LogInActivity, Feed::class.java)
