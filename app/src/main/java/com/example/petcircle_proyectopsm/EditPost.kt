@@ -118,23 +118,37 @@ class EditPost : AppCompatActivity() {
     }
 
     private fun updatePost() {
-        // Crear la solicitud con el estado de baja lógica (Status = 0)
+        // Obtener los valores de los campos
+        val title = binding.PostTitle.text.toString().trim()
+        val description = binding.PostBody.text.toString().trim()
+
+        // Validación para asegurarse de que los campos no estén vacíos
+        if (title.isEmpty()) {
+            Toast.makeText(this@EditPost, "El título no puede estar vacío", Toast.LENGTH_SHORT).show()
+            return // No continuar si el título está vacío
+        }
+
+        if (description.isEmpty()) {
+            Toast.makeText(this@EditPost, "La descripción no puede estar vacía", Toast.LENGTH_SHORT).show()
+            return // No continuar si la descripción está vacía
+        }
+
+        // Crear la solicitud con los datos actualizados
         val updatePostInfoRequest = UpdatePostInfoRequest(
             PostId = postId,
-            Title = binding.PostTitle.text.toString(),
-            Description = binding.PostBody.text.toString(),
+            Title = title,
+            Description = description
         )
 
         // Hacer la solicitud a la API
-        UserDbClient.service.editPost ("Post", updatePostInfoRequest).enqueue(object : Callback<Void> {
+        UserDbClient.service.editPost("Post", updatePostInfoRequest).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
-
-                    Toast.makeText(this@EditPost, "Post  eliminado", Toast.LENGTH_SHORT).show()
-                    finish() // cerrar la actividad
+                    Toast.makeText(this@EditPost, "Post actualizado", Toast.LENGTH_SHORT).show()
+                    finish() // Cerrar la actividad
                 } else {
                     // Manejo de error si la respuesta no es exitosa
-                    Toast.makeText(this@EditPost, "Error al eliminar el post", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@EditPost, "Error al actualizar el post", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -144,6 +158,7 @@ class EditPost : AppCompatActivity() {
             }
         })
     }
+
 
     private fun decodeImage(base64: String): Bitmap? {
         return try {

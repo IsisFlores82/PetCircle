@@ -153,55 +153,55 @@ class Feed : AppCompatActivity() {
                 R.id.New -> {
                     Log.d("MenuClick", "Item clicked: Whats new")
                     getPost()
-                    Toast.makeText(this, "Whats new clicker", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Whats new clicker", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.forFun -> {
                     Log.d("MenuClick", "Item clicked: For Fun")
                     getPostByCategory(2)
-                    Toast.makeText(this, "For Fun clicker", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "For Fun clicker", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.questions -> {
                     Log.d("MenuClick", "Item clicked: Questions")
                     getPostByCategory(3)
-                    Toast.makeText(this, "Questions clicker", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Questions clicker", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.Anecdote -> {
                     Log.d("MenuClick", "Item clicked: Anecdote")
                     getPostByCategory(1)
-                    Toast.makeText(this, "Anecdote clicker", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Anecdote clicker", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.Medic -> {
                     Log.d("MenuClick", "Item clicked: Health")
                     getPostByCategory(4)
-                    Toast.makeText(this, "Medic clicker", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Medic clicker", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.Aliment -> {
                     Log.d("MenuClick", "Item clicked: Aliment")
                     getPostByCategory(5)
-                    Toast.makeText(this, "Aliment clicker", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Aliment clicker", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.Adption -> {
                     Log.d("MenuClick", "Item clicked: Adoption")
                     getPostByCategory(6)
-                    Toast.makeText(this, "Adoption clickeado", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Adoption clickeado", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.profile -> {
                     Log.d("MenuClick", "Item clicked: Profile")
-                    Toast.makeText(this, "Profile clickeado", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Profile clickeado", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Profile::class.java)
                     startActivity(intent)
                     true
                 }
                 R.id.mypost -> {
                     Log.d("MenuClick", "Item clicked: My posts")
-                    Toast.makeText(this, "My posts clickeado", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "My posts clickeado", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MyPost::class.java)
                     startActivity(intent)
                     true
