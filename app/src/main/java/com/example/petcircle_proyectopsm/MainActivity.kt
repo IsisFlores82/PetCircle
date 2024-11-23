@@ -1,14 +1,21 @@
 package com.example.petcircle_proyectopsm
 
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.petcircle_proyectopsm.databinding.ActivityMainBinding
+import com.example.petcircle_proyectopsm.network.NetworkReceiver
+import android.widget.Toast
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var networkReceiver: NetworkReceiver
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -44,5 +51,28 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        networkReceiver = NetworkReceiver {
+            //Actualizar base de datos
+            runOnUiThread {
+                Toast.makeText(this, "Conexión restaurada", Toast.LENGTH_SHORT).show()
+            }
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    // Sincronizar datos entre SQLite y MySQL
+                    //sincronizarDatosConServidor()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    // Manejo de errores, si es necesario
+                }
+            }
+        }
+
+        val intentFilter = IntentFilter("android.net.conn.CONNECTIVITY_CHANGE")
+        registerReceiver(networkReceiver, intentFilter)
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(networkReceiver)
     }
 }
