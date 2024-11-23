@@ -114,7 +114,8 @@ class CreatePost : AppCompatActivity() {
             CreationDate = currentDate,
             UpdatedDate = currentDate,
             Status = 1,
-            Images = imagesBase64
+            Images = imagesBase64,
+            CategoryName = binding.spinner.selectedItem.toString() //checar esto bien, puede que no sea asi
         )
 
         val gson = Gson()

@@ -8,9 +8,10 @@
     android:padding="20dp">
 
     <ImageView
+        android:id="@+id/MenuProfileImg"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@mipmap/canelaa_round"
+
         android:layout_marginBottom="5dp"/>
 
     <TextView

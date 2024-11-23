@@ -51,11 +51,11 @@ class Profile : AppCompatActivity() {
         val prefs = Prefs(this)
         val savedId = prefs.getUserId()
 
-// Verifica que el ID no sea inválido (-1)
+        // checa q el id no sea invalido
         if (savedId != -1) {
             GetData(savedId)
         } else {
-            Toast.makeText(this, "No se encontró un usuario válido", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No se encontró al usuario", Toast.LENGTH_SHORT).show()
         }
 
 

@@ -70,12 +70,12 @@
             android:textSize="20sp"
             tools:text="Post body" />
 
-        <ImageView
-            android:id="@+id/PostImg"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
 
-            tools:srcCompat="@tools:sample/avatars" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/imageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
 
 
     </LinearLayout>

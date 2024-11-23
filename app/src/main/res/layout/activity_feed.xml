@@ -62,7 +62,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imgProfile"
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:layout_marginStart="5dp"
@@ -70,7 +70,8 @@
                     app:layout_constraintBottom_toBottomOf="@+id/myToolbar"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/myToolbar"
-                    app:srcCompat="@mipmap/canelaa_round" />
+                    android:background="@drawable/circula_image"
+                     />
 
                 <ImageView
                     android:layout_width="44dp"
