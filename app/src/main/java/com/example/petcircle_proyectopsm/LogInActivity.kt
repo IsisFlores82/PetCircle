@@ -20,15 +20,15 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLogInBinding
     private var user: User? = null
 
-    companion object{
-        lateinit var dbHelper: DbHelper
-    }
+    private lateinit var dbHelper: DbHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        dbHelper = DbHelper(applicationContext)
 
         // checa si hay credenciales guardadas
         val prefs = Prefs(this) //instancia la clase con el conetexto de la ventana
@@ -65,8 +65,6 @@ class LogInActivity : AppCompatActivity() {
                            // prefs.saveUserCredentials(email, password)
                             prefs.saveUserCredentials(email, password, user.UserId, user.Img, user.PhoneNumber, user.FullName, user.NickName)
                             prefs.saveUserCredentials(email, password, user.UserId, user.Img, user.PhoneNumber, user.FullName, user.NickName)
-
-                            dbHelper = DbHelper(applicationContext)
 
                             dbHelper.insertUser(user)
 

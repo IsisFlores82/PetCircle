@@ -1,5 +1,6 @@
 package com.example.petcircle_proyectopsm
 
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
@@ -10,17 +11,23 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.petcircle_proyectopsm.databinding.ActivityMainBinding
 import com.example.petcircle_proyectopsm.network.NetworkReceiver
 import android.widget.Toast
+import com.example.petcircle_proyectopsm.db.DbHelper
+import com.example.petcircle_proyectopsm.repository.PostRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var networkReceiver: NetworkReceiver
+
+    private lateinit var dbHelper: DbHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
+
+        dbHelper = DbHelper(applicationContext)
 
         binding.btnLogIn.setOnClickListener {
 
@@ -59,8 +66,7 @@ class MainActivity : AppCompatActivity() {
             }
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    // Sincronizar datos entre SQLite y MySQL
-                    //sincronizarDatosConServidor()
+                    PostRepository(dbHelper).synchronizePosts()
                 } catch (e: Exception) {
                     e.printStackTrace()
                     // Manejo de errores, si es necesario

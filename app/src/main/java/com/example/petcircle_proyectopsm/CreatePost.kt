@@ -19,7 +19,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.petcircle_proyectopsm.databinding.ActivityCreatePostBinding
+import com.example.petcircle_proyectopsm.db.DbHelper
 import com.example.petcircle_proyectopsm.model.UserDbClient
+import com.example.petcircle_proyectopsm.network.NetworkUtils
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,18 +30,21 @@ import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.*
+import com.example.petcircle_proyectopsm.repository.PostRepository
 
 class CreatePost : AppCompatActivity() {
 
     private lateinit var binding: ActivityCreatePostBinding
     private val SELECT_IMAGE_REQUEST_CODE = 100
     private val imageUris = mutableListOf<Uri>()
+    private lateinit var dbHelper: DbHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityCreatePostBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        dbHelper = DbHelper(applicationContext)
 
         val spinner: Spinner = binding.spinner
         val listCategories = listOf(
@@ -121,6 +126,16 @@ class CreatePost : AppCompatActivity() {
         val gson = Gson()
         val jsonPost = gson.toJson(newPost)
         Log.d("Post", jsonPost)
+
+        if (NetworkUtils.isNetworkAvailable(this)) {
+            savePost(newPost)
+        } else {
+            PostRepository(dbHelper).saveUnsyncPost(newPost)
+            Toast.makeText(this, "Sin conexión", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    public fun savePost(newPost: Post){
 
         UserDbClient.service.savePost("Post", newPost).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {

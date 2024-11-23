@@ -3,7 +3,7 @@ package com.example.petcircle_proyectopsm.db
 class SetDB {
     companion object{
         val DB_NAME =  "PetCircle"
-        val DB_VERSION =  2
+        val DB_VERSION =  6
     }
 
     abstract class tblUsers{
@@ -33,4 +33,49 @@ class SetDB {
         }
     }
 
+    abstract class tblUnsyncPosts{
+        companion object{
+            val TABLE_NAME = "UnsyncPosts"
+            val PostId = "PostId"
+            val UserId = "UserId"
+            val CategoryId = "CategoryId"
+            val Title = "Title"
+            val Description = "Description"
+            val CreationDate = "CreationDate"
+            val UpdatedDate = "UpdatedDate"
+            val Status = "Status"
+        }
+    }
+
+    abstract class tblPosts{
+        companion object{
+            val TABLE_NAME = "Posts"
+            val PostId = "PostId"
+            val UserId = "UserId"
+            val CategoryId = "CategoryId"
+            val Title = "Title"
+            val Description = "Description"
+            val CreationDate = "CreationDate"
+            val UpdatedDate = "UpdatedDate"
+            val Status = "Status"
+        }
+    }
+
+    abstract class tblUnsyncImages{
+        companion object{
+            val TABLE_NAME = "UnsyncImages"
+            val ImgId = "ImgId"
+            val PostId = "PostId"
+            val Img = "Img"
+        }
+    }
+
+    abstract class tblImages{
+        companion object{
+            val TABLE_NAME = "Images"
+            val ImgId = "ImgId"
+            val PostId = "PostId"
+            val Img = "Img"
+        }
+    }
 }
