@@ -63,8 +63,8 @@ class LogInActivity : AppCompatActivity() {
                             val prefs = Prefs(this@LogInActivity)
 
                            // prefs.saveUserCredentials(email, password)
-                            prefs.saveUserCredentials(email, password, user.UserId)
-                            prefs.saveUserCredentials(email, password, user.UserId)
+                            prefs.saveUserCredentials(email, password, user.UserId, user.Img, user.PhoneNumber, user.FullName, user.NickName)
+                            prefs.saveUserCredentials(email, password, user.UserId, user.Img, user.PhoneNumber, user.FullName, user.NickName)
 
                             dbHelper = DbHelper(applicationContext)
 

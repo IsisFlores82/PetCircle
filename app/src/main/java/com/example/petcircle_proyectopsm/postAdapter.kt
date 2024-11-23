@@ -37,6 +37,12 @@ class PostAdapter(private var posts: List<Post>) : RecyclerView.Adapter<PostAdap
         notifyDataSetChanged()  // Actualiza el RecyclerView
     }
 
+    fun filtrar(listaFiltrada: List<Post>) {
+        this.posts = listaFiltrada
+        notifyDataSetChanged()
+
+    }
+
     inner class PostViewHolder(val binding: ViewPostItemBinding) : RecyclerView.ViewHolder(binding.root)
 }
 

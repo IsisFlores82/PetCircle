@@ -18,6 +18,9 @@ interface ThePetCircleDbService {
     @GET("?e=Posts") // Este es el endpoint
     fun listPost(@Query("c") controller: String):  Call<List<Post>>
 
+    @GET("?e=PostsByCategoryId") // Este es el endpoint
+    fun listPostByCategory(@Query("c") controller: String, @Query("i") categoryId: Int):  Call<List<Post>>
+
     @GET("?e=Users") // Este es el endpoint
     fun listUsers(@Query("c") controller: String): Call<List<User>>
 
