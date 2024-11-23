@@ -324,6 +324,46 @@ class DbHelper (var context: Context): SQLiteOpenHelper(context, SetDB.DB_NAME, 
         return boolResult
     }
 
+    public fun deleteUnsyncPost(postId:Int):Boolean{
+        val db = this.writableDatabase
+        var boolResult:Boolean =  false
+        try{
+
+            val where:String =  SetDB.tblUnsyncPosts.PostId + "=?"
+            val _success = db.delete(SetDB.tblUnsyncPosts.TABLE_NAME, where, arrayOf(postId.toString()))
+            db.close()
+
+            boolResult = Integer.parseInt("$_success") != -1
+
+
+        }catch (e: Exception){
+
+            Log.e("Execption", e.toString())
+        }
+
+        return  boolResult
+    }
+
+    public fun deleteUnsyncImages(postId:Int):Boolean{
+        val db = this.writableDatabase
+        var boolResult:Boolean =  false
+        try{
+
+            val where:String =  SetDB.tblUnsyncImages.PostId + "=?"
+            val _success = db.delete(SetDB.tblUnsyncImages.TABLE_NAME, where, arrayOf(postId.toString()))
+            db.close()
+
+            boolResult = Integer.parseInt("$_success") != -1
+
+
+        }catch (e: Exception){
+
+            Log.e("Execption", e.toString())
+        }
+
+        return  boolResult
+    }
+
     fun convertBlobToBase64(blob: ByteArray): String {
         return try{
             Base64.encodeToString(blob, Base64.DEFAULT)

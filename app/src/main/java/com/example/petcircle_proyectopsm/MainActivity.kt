@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -66,10 +67,11 @@ class MainActivity : AppCompatActivity() {
             }
             CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    PostRepository(dbHelper).synchronizePosts()
+                    Log.e("TAG", "Estado de dbHelper: $dbHelper")
+                    val postRepository = PostRepository(dbHelper)
+                    postRepository.synchronizePosts()
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    // Manejo de errores, si es necesario
                 }
             }
         }

@@ -1,6 +1,6 @@
 package com.example.petcircle_proyectopsm
 data class Post(
-    val PostId: Int,
+    var PostId: Int,
     val UserId: Int,
     val CategoryId: Int?,
     val Title: String,

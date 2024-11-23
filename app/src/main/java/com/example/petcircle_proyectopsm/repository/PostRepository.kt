@@ -10,8 +10,9 @@ class PostRepository(private val dbHelper: DbHelper) {
     val createPost = CreatePost()
 
     fun synchronizePosts(){
+        Log.e("TAG", "Entró a intentar leer los posts de la bd local")
         val posts = dbHelper.getUnsyncPosts()
-        /*
+        Log.e("TAG", "El postSize es: " + posts.size)
         if(posts.size > 0){
             Log.e("TAG", "Se actualizarán los Posts")
             for (post in posts){
@@ -22,11 +23,13 @@ class PostRepository(private val dbHelper: DbHelper) {
                 }catch (e: Exception){
                     Log.e("Exception", e.toString())
                 } finally {
-
+                    if(dbHelper.deleteUnsyncPost(actualPostId)){
+                        dbHelper.deleteUnsyncImages(actualPostId)
+                    }
                 }
 
             }
-        }*/
+        }
     }
 
     fun saveUnsyncPost(post: Post){
