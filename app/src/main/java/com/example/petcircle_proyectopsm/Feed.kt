@@ -49,6 +49,7 @@ class Feed : AppCompatActivity() {
     private lateinit var networkReceiver: NetworkReceiver
     private var user: User? = null
     private var allPost = listOf<Post>() // Lista de post original sin filtrar
+    private lateinit var dbHelper: DbHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +57,7 @@ class Feed : AppCompatActivity() {
         // Binding
         binding = ActivityFeedBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        dbHelper = DbHelper(applicationContext)
 
         // Configurar RecyclerView
         postAdapter = PostAdapter(listOf()) { post -> onPostClicked(post) }
@@ -211,13 +213,8 @@ class Feed : AppCompatActivity() {
                     val prefs = Prefs(this)
                     prefs.clearUserCredentials()
 
-
-          LogInActivity.dbHelper.onLogOut()
-
                     // Redirigir a MainActivity y limpiar la pila de actividades
-                    LogInActivity.dbHelper.onLogOut()
-
-                    // Redirigir a MainActivity y limpiar la pila de actividades
+                    dbHelper.onLogOut();
 
                     val intent = Intent(this, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
