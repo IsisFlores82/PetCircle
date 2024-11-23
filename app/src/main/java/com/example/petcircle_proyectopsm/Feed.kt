@@ -58,7 +58,7 @@ class Feed : AppCompatActivity() {
         setContentView(binding.root)
 
         // Configurar RecyclerView
-        postAdapter = PostAdapter(listOf())
+        postAdapter = PostAdapter(listOf()) { post -> onPostClicked(post) }
         binding.recycler.layoutManager = LinearLayoutManager(this)
         binding.recycler.adapter = postAdapter
 
@@ -194,6 +194,13 @@ class Feed : AppCompatActivity() {
                     Log.d("MenuClick", "Item clicked: Profile")
                     Toast.makeText(this, "Profile clickeado", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Profile::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.mypost -> {
+                    Log.d("MenuClick", "Item clicked: My posts")
+                    Toast.makeText(this, "My posts clickeado", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MyPost::class.java)
                     startActivity(intent)
                     true
                 }
@@ -415,6 +422,10 @@ class Feed : AppCompatActivity() {
         //}
         //postAdapter.filtrar(albumsFiltrados)
         ////postAdapter.notifyDataSetChanged()
+    }
+
+    private fun onPostClicked(post: Post) {
+        Toast.makeText(this, "Post seleccionado: ${post.Title}", Toast.LENGTH_SHORT).show()
     }
 
 }

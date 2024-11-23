@@ -1,6 +1,8 @@
 package com.example.petcircle_proyectopsm.model
 
 import com.example.petcircle_proyectopsm.Post
+import com.example.petcircle_proyectopsm.UpdatePostInfoRequest
+import com.example.petcircle_proyectopsm.UpdateStatusRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -20,6 +22,12 @@ interface ThePetCircleDbService {
 
     @GET("?e=PostsByCategoryId") // Este es el endpoint
     fun listPostByCategory(@Query("c") controller: String, @Query("i") categoryId: Int):  Call<List<Post>>
+
+    @GET("?e=PostsByUserId") // Este es el endpoint
+    fun listPostByUserId(@Query("c") controller: String, @Query("i") userId: Int):  Call<List<Post>>
+
+    @GET("?e=Posts") //endpoint
+    fun getPostById(@Query("c") controller: String, @Query("i") postId: Int): Call<List<Post>>
 
     @GET("?e=Users") // Este es el endpoint
     fun listUsers(@Query("c") controller: String): Call<List<User>>
@@ -50,6 +58,19 @@ interface ThePetCircleDbService {
     // Esta va extra porque no estamos haciendo eliminación directa, sino lógica, así que siempre sería con POST
     @POST("?e=Users") // Cambié DELETE por POST ya que estás usando eliminación lógica
     fun deleteUser(@Query("c") controller: String, @Query("id") userId: Int): Call<Void>
+
+
+
+
+
+    @POST("?e=UpdateStatus")
+    fun deletePost(@Query("c") controller: String, @Body updateStatusRequest: UpdateStatusRequest): Call<Void>
+
+    @POST("?e=UpdatePostInfo")
+    fun editPost(@Query("c") controller: String, @Body updatePostInfoRequest: UpdatePostInfoRequest): Call<Void>
+
+
+
 
 
     // Guardar un post

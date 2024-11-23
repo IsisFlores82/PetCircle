@@ -54,6 +54,11 @@
                     android:title="@string/Profile" />
 
                 <item
+                    android:id="@+id/mypost"
+                    android:icon="@drawable/my_post"
+                    android:title="@string/MyPosts" />
+
+                <item
                     android:id="@+id/LogOut"
                     android:icon="@drawable/logout"
                     android:title="@string/LogOut" />

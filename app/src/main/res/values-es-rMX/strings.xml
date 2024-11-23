@@ -26,4 +26,5 @@
     <string name="NickName">Apodo</string>
     <string name="editPro">Editar Perfil</string>
     <string name="New">Que hay de nuevo?</string>
+    <string name="MyPosts">Mis Publicaciones</string>
 </resources>
