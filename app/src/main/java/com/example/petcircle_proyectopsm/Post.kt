@@ -8,5 +8,11 @@ data class Post(
     val CreationDate: String,
     val UpdatedDate: String,
     val Status: Int,
-    val Img: String? = null // Opcional
+    val Images: List<Image>
+)
+
+data class Image(
+    val ImgId: Int = 0,      // Agregar ImgId por compatibilidad
+    val PostId: Int = 0,     // Este campo lo llena el backend
+    val Img: String          // Renombrar de Base64 a Img
 )
